@@ -342,7 +342,7 @@ spec:
                 - --config=controller_manager_config.yaml
                 command:
                 - /manager
-                image: controller:latest
+                image: docker.io/pavolloffay/tempo-operator:dev-85
                 livenessProbe:
                   httpGet:
                     path: /healthz
