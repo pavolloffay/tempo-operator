@@ -405,6 +405,7 @@ func enableMonitoringTab(tempo v1alpha1.TempoStack, jaegerQueryContainer corev1.
 	if prometheusEndpoint == thanosQuerierOpenShiftMonitoring {
 		container.Args = append(container.Args,
 			"--prometheus.tls.enabled=true",
+			"--prometheus.query.namespace=",
 			// This enables token propagation, however flag --query.bearer-token-propagation=true
 			// enabled bearer token propagation, overrides the settings and token from the context (incoming) request is used.
 			"--prometheus.token-file=/var/run/secrets/kubernetes.io/serviceaccount/token",
